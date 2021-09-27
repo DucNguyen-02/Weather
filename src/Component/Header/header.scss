@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+.date {
+    &-hour {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    &-day {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+.location {
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &-name {
+        font-size: 20px;
+    }
+    &-latlon {
+        font-size: 20px;
+    }
+}
+
+.info {
+    &-list {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 300px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 10px 30px rgba(0, 0, 0, 0.9);
+    }
+    &-item {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+}
