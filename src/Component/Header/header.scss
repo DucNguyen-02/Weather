@@ -50,3 +50,21 @@
         font-size: 16px;
     }
 }
+
+@media screen and (max-width: 740px) {
+    .location {
+        display: none;
+    }
+    .header {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+    .info {
+        &-list {
+            display: block;
+            text-align: center;
+            margin: 10px auto;
+        }
+    }
+}

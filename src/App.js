@@ -37,11 +37,13 @@ const App = () => {
     return (
         <div className="app">
             {typeof data == 'object' ? (
-                <Header data={data} location={location} />
+                <>
+                    <Header data={data} location={location} />
+                    <Future data={data} />
+                </>
             ) : (
                 ''
             )}
-            <Future />
         </div>
     )
 }

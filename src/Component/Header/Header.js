@@ -8,7 +8,6 @@ const Header = (props) => {
     const { humidity, pressure, sunrise, sunset, wind_speed } =
         props.data.current
     let { latitude, longitude } = props.location
-    // console.log(props.data.current)
     var sr = new Date(sunrise * 1000)
     var ss = new Date(sunset * 1000)
     return (
