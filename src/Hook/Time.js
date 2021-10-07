@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { lat, lon } from '../utils/getLocation'
 
 function formatTime(date) {
     const hours = `0${date.getHours()}`.slice(-2)
