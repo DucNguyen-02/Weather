@@ -1,8 +1,6 @@
 import { UseLocation } from '../Hook/Time'
 
-function fetchData() {
-    const { lat, lon } = UseLocation()
-
+function fetchData(lat, lon) {
     // const key = '7a48f997c4cbf992ada8ce8e44129c66'
     const newKey = 'b6d77cb69d800cebfb5cae9a3d247f5b'
 
@@ -13,9 +11,10 @@ function fetchData() {
 }
 
 const wrapPromise = (promise) => {
+    const { lat, lon } = UseLocation()
     let status = 'pending'
     let result = ''
-    let suspender = promise.then(
+    let suspender = promise(lat, lon).then(
         (r) => {
             status = 'success'
             result = r
@@ -40,6 +39,6 @@ const wrapPromise = (promise) => {
 
 export const createResource = () => {
     return {
-        data: wrapPromise(fetchData()),
+        data: wrapPromise(fetchData),
     }
 }
