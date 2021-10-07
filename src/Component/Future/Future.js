@@ -2,8 +2,7 @@ import React from 'react'
 import './future.scss'
 
 const Future = (props) => {
-    const daily = props.data.daily
-    console.log(daily)
+    const daily = props.data.data.read().daily
     return (
         <section className="future">
             <ul className="future-list">

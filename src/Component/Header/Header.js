@@ -1,13 +1,13 @@
 import React from 'react'
-import { useClock, useDate } from '../../Hook/Time'
+import { useClock, useDate, UseLocation } from '../../Hook/Time'
 import './header.scss'
 
 const Header = (props) => {
     const time = useClock()
     const date = useDate()
+    const { lat, lon } = UseLocation()
     const { humidity, pressure, sunrise, sunset, wind_speed } =
-        props.data.current
-    let { latitude, longitude } = props.location
+        props.data.data.read().current
     var sr = new Date(sunrise * 1000)
     var ss = new Date(sunset * 1000)
     return (
@@ -44,9 +44,7 @@ const Header = (props) => {
             <section className="location">
                 <div className="location-wrapper">
                     <h1 className="location-name">LaoBao/VietNam</h1>
-                    <p className="location-latlon">{`${latitude.toFixed(
-                        4
-                    )}N ${longitude.toFixed(4)}E`}</p>
+                    <p className="location-latlon">{`${lat}N ${lon}E`}</p>
                 </div>
             </section>
         </header>

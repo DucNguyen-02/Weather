@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { lat, lon } from '../utils/getLocation'
 
 function formatTime(date) {
     const hours = `0${date.getHours()}`.slice(-2)
@@ -72,4 +73,21 @@ export function useDate() {
     }, [])
 
     return dateString
+}
+
+export function UseLocation() {
+    const [location, setLocation] = useState('')
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((success) => {
+            const lat = success.coords.latitude
+            const lon = success.coords.longitude
+            setLocation({
+                lat,
+                lon,
+            })
+        })
+    }, [])
+
+    return location
 }
