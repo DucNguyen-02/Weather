@@ -7,7 +7,7 @@ const Header = (props) => {
     const date = useDate()
     const { lat, lon } = UseLocation()
     const { humidity, pressure, sunrise, sunset, wind_speed } =
-        props.data.data.read().current
+        props.data.current
     var sr = new Date(sunrise * 1000)
     var ss = new Date(sunset * 1000)
     return (

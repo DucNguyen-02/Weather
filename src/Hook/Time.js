@@ -76,7 +76,6 @@ export function useDate() {
 
 export function UseLocation() {
     const [location, setLocation] = useState('')
-
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((success) => {
             const lat = success.coords.latitude

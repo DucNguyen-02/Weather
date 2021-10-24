@@ -2,7 +2,7 @@ import React from 'react'
 import './future.scss'
 
 const Future = (props) => {
-    const daily = props.data.data.read().daily
+    const daily = props.data.daily
     return (
         <section className="future">
             <ul className="future-list">
@@ -12,7 +12,7 @@ const Future = (props) => {
                     const icon = day.weather[0].icon
                     const url = `https://openweathermap.org/img/wn//${icon}@4x.png`
                     return index === 0 ? (
-                        <div className="today">
+                        <div className="today" key={index}>
                             <img className="today-img" src={url} alt="" />
                             <div className="today-desc">
                                 <h2 className="today-day day">{ddd}</h2>
@@ -25,7 +25,7 @@ const Future = (props) => {
                             </div>
                         </div>
                     ) : (
-                        <div className="future-item">
+                        <div className="future-item" key={index}>
                             <h2 className="day">{ddd}</h2>
                             <img className="future-img" src={url} alt="" />
                             <p className="future-temp desc">
