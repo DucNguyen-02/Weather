@@ -10,7 +10,7 @@ const App = () => {
     return (
         <Suspense fallback={<Loading />}>
             <div className="app">
-                {/* <Header data={resource} /> */}
+                <Header data={resource} />
                 <Future data={resource} />
             </div>
         </Suspense>
